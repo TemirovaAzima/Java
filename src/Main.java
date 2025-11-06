@@ -1,29 +1,55 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Shopping cart program
-     Scanner scanner = new Scanner(System.in);
+       // if statement
+        Scanner scanner = new Scanner(System.in);
 
-     String item;
-     double price;
-     int quantity;
-     char currency = '$';
-     double total;
+        String name;
+        int age;
+        boolean isStudent;
 
-        System.out.print("What item would you like to buy?: ");
-        item = scanner.nextLine();
+        System.out.print("Enter your name: ");
+        name = scanner.nextLine();
 
-        System.out.print("What is the price for each?: ");
-        price = scanner.nextDouble();
+        System.out.print("Enter your age: ");
+        age = scanner.nextInt();
 
-        System.out.print("How many would you like?: ");
-        quantity = scanner.nextInt();
+        System.out.println("Are you a student (true/false)");
+        isStudent = scanner.nextBoolean();
 
-        total = price * quantity;
 
-        System.out.println("\nYou have bought " + quantity + " "  + item + "/s" );
-        System.out.println("Your total is " + currency + total );
+        // Group 1
+        if(name.isEmpty()){
+            System.out.println("You didn't enter your name!😡");
+        }
+        else{
+            System.out.println("Hello " +name + "! 😀");
+        }
+        // Group 2
+        if (age>=65){
+            System.out.println("You are a senior 🧓");
+        }
+        else if(age>=18){
+            System.out.println("You are an adult 🧑");
+        }
+        else if(age< 0){
+            System.out.println("You haven't born yet 😇");
+        }
+        else if(age==0){
+            System.out.println("You are a baby 👶");
+        }
+        else {
+            System.out.println("You are a child 🧒");
+        }
 
-     scanner.close();
+        // Group 3
+
+        if(isStudent){
+            System.out.println("You are a student 🏫");
+        }
+        else {
+            System.out.println("You are not a student 🏢");
+        }
+        scanner.close();
     }
 }
