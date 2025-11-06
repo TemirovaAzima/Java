@@ -58,7 +58,7 @@ public class Main {
           if(forSale){
               System.out.println("There is a " + car + " for sale");
           }else {
-              System.out.println("The " + car + " is not for sale" );
+              System.out.println("The " + car + " is not for sale " );
           }
 
     }
