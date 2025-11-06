@@ -2,29 +2,52 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Enhanced switches
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the day of the week: ");
-        String day = scanner.nextLine();
+        // declare variables and operator
+        // // prompt for numbers and operators
+        // save to the variables
+        // use switch to define which operator we will do
+        // show the result
 
-//        switch(day){
-//            case "monday" -> System.out.println("It is a weekday");
-//            case "tuesday" -> System.out.println("It is a weekday");
-//            case "wednesday" -> System.out.println("It is a weekday");
-//            case "thursday" -> System.out.println("It is a weekday");
-//            case "friday" -> System.out.println("It is a weekday");
-//            case "saturday" -> System.out.println("It is a weekend");
-//            case "sunday" -> System.out.println("It is a weekend");
-//            default -> System.out.println(day + " is not a day");
-//        }
-        // we will consolidate this
+        double num1;
+        double num2;
+        char operator;
+        double result = 0 ;
+        boolean validOperation = true;
 
-        switch(day){
-            case "Monday","Tuesday","Wednesday","Thursday","Friday" ->
-                    System.out.println("It is a weekday");
-            case "Saturday", "Sunday" -> System.out.println("It is a weekend");
-            default -> System.out.println(day + " is not a day");
+        System.out.print("Enter the first number: ");
+        num1 = scanner.nextDouble();
+
+        System.out.print("Enter the operator (+,-,* ,/,^): ");
+        operator = scanner.next().charAt(0);
+
+        System.out.print("Enter the second number: ");
+        num2 = scanner.nextDouble();
+
+        switch(operator){
+            case '+' -> result = num1 + num2;
+            case '-' -> result = num1 - num2;
+            case '*' -> result = num1 * num2;
+            case '/' -> {
+                if(num2 == 0){
+                    System.out.println("Cannot divide by zero");
+                    validOperation = false;
+                }else{
+                    result = num1 / num2;
+                }
+            }
+            case '^' -> result = Math.pow(num1,num2);
+            default -> {
+                System.out.println("Operator is not valid");
+                validOperation = false;
+            }
         }
+       if(validOperation){
+           System.out.println(result);
+       }
+
+        scanner.close();
     }
 }
