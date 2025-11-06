@@ -1,40 +1,29 @@
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Arithmetic Operators
-//
-//        int x = 10;
-//        int y = 3;
-//        int z ;
-//        z = x + y;
-//        z  = x - y;
-//        z = x * y;
-//        z = x / y;
-//        z = x % y;
-         // Augmented Assignment Operators
-//        x = x + y;
-//        x+=y;
-//        x = x - y ;
-//        x-=y;
-//        x=x*y;
-//        x*=y;
-//        x = x / y ;
-//        x/=y;
-//        x = x% y;
-//        x %=y;
-        // Increment and Decrement operators
-//        int x = 1;
-//
-//         x++;
-//         x--;
-        // Order of operators
-        double result = 3 + 4 * (7-5) / 2.0;
+        // Shopping cart program
+     Scanner scanner = new Scanner(System.in);
 
-        System.out.println(result);
+     String item;
+     double price;
+     int quantity;
+     char currency = '$';
+     double total;
 
+        System.out.print("What item would you like to buy?: ");
+        item = scanner.nextLine();
 
+        System.out.print("What is the price for each?: ");
+        price = scanner.nextDouble();
 
+        System.out.print("How many would you like?: ");
+        quantity = scanner.nextInt();
 
+        total = price * quantity;
 
+        System.out.println("\nYou have bought " + quantity + " "  + item + "/s" );
+        System.out.println("Your total is " + currency + total );
+
+     scanner.close();
     }
 }
