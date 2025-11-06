@@ -2,35 +2,29 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-      Scanner scanner = new Scanner(System.in);
-      // declare variables
-      // first welcome message
-        //  prompt for user choice
-        // 1 option converting to  fahrenheit
-        // 2 option converting to celsius
-        // else print  not a valid choice
+        // Enhanced switches
+        Scanner scanner = new Scanner(System.in);
 
-        double temp ;
-        double newTemp;
-        String unit ;
+        System.out.print("Enter the day of the week: ");
+        String day = scanner.nextLine();
 
-        System.out.print("Enter the temperature: ");
-        temp = scanner.nextDouble();
-        scanner.nextLine();
+//        switch(day){
+//            case "monday" -> System.out.println("It is a weekday");
+//            case "tuesday" -> System.out.println("It is a weekday");
+//            case "wednesday" -> System.out.println("It is a weekday");
+//            case "thursday" -> System.out.println("It is a weekday");
+//            case "friday" -> System.out.println("It is a weekday");
+//            case "saturday" -> System.out.println("It is a weekend");
+//            case "sunday" -> System.out.println("It is a weekend");
+//            default -> System.out.println(day + " is not a day");
+//        }
+        // we will consolidate this
 
-        System.out.print("Convert to Celsius or Fahrenheit (C or F): ");
-        unit = scanner.next().toUpperCase();
-
-//        System.out.println(choice);
-//        System.out.println(temp);
-//        newTemp = (temp * 9/5) + 32;
-//        System.out.println(newTemp);
-//        System.out.println(choice);
-//        System.out.println(choice.equals("f"));
-//        System.out.println( (temp - 32) * 5/9);
-
-        newTemp = (unit.equals("F")) ? ((temp * 9/5) + 32) : (temp - 32) * 5/9;
-        System.out.println("The temperature is " + newTemp + "°" + unit);
-       scanner.close();
+        switch(day){
+            case "Monday","Tuesday","Wednesday","Thursday","Friday" ->
+                    System.out.println("It is a weekday");
+            case "Saturday", "Sunday" -> System.out.println("It is a weekend");
+            default -> System.out.println(day + " is not a day");
+        }
     }
 }
