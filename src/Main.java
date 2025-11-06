@@ -1,39 +1,52 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Random random = new Random();
+//        System.out.println(Math.PI );
+//        double result;
+//        result = Math.pow(2,5);
+//        result = Math.abs(-5);
+//        result = Math.sqrt(9);
+//        result = Math.round(3.74);
+//        result = Math.ceil(3.14);
+//        result = Math.floor(3.14);
+//        result = Math.max(10,20);
+//        result = Math.min(10,20);
+//        System.out.println(result);
+        // Hypotenuse c = math.sqrt(a² + b²)
+      Scanner scanner = new Scanner(System.in);
+//       double a;
+//       double b;
+//       double c;
 //
-//        int number1;
-//        int number2;
-//        int number3;
+//        System.out.print("Enter the length of side A: ");
+//        a = scanner.nextDouble();
 //
-//        number1 = random.nextInt(1,100);
-//        number2 = random.nextInt(1,101);
-//        number3 = random.nextInt(1,101);
-//        System.out.println(number1);
-//        System.out.println(number2);
-//        System.out.println(number3);
+//        System.out.print("Enter the length of side B: ");
+//        b = scanner.nextDouble();
+//
+//        c = Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
+//        System.out.println("The hypotenuse (side c) is: " + c + "cm");
 
-//        double number;
-//
-//        number = random.nextDouble();
-//
-//        System.out.println(number);
 
-        boolean isHeads;
-//
-        isHeads = random.nextBoolean();
-//
-//        System.out.println(isHeads);
+        // circumference = 2 * Math.PI * radius;
+        // area = Math.PI * Math.pow(radius,2);
+        // volume = (4.0 / 3.0) * Math.PI * Math.pow(radius,3)
 
-        if(isHeads){
-            System.out.println("Heads");
-        }
-        else{
-            System.out.println("Tails");
-        }
+        double radius;
+        double circumference;
+        double area;
+
+        System.out.print("Enter the radius: ");
+        radius = scanner.nextDouble();
+
+        circumference = 2 * Math.PI * radius ;
+        area = Math.PI * Math.pow(radius,2);
+        System.out.println("The circumference is: " + circumference + "cm");
+        System.out.println("The area is: " + area + "cm²");
+        scanner.close();
+
 
     }
 }
