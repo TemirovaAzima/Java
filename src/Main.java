@@ -1,24 +1,36 @@
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-     // ternary operator
+      Scanner scanner = new Scanner(System.in);
+      // declare variables
+      // first welcome message
+        //  prompt for user choice
+        // 1 option converting to  fahrenheit
+        // 2 option converting to celsius
+        // else print  not a valid choice
 
-//        int score = 78;
-//
-//        String passOrFail =  (score>=60 ) ?  "pass" : "fail";
-//        System.out.println(passOrFail);
+        double temp ;
+        double newTemp;
+        String unit ;
 
-//        int number = 72;
-//        String evenOrOdd = (number % 2 == 0) ? "Even" : "Odd";
-//        System.out.println(evenOrOdd);
+        System.out.print("Enter the temperature: ");
+        temp = scanner.nextDouble();
+        scanner.nextLine();
 
-//        int hours = 20;
-//
-//        String timeOfDay = (hours>=12) ? "P.M" : "A.M";
-//        System.out.println(timeOfDay);
-        int income = 30000;
+        System.out.print("Convert to Celsius or Fahrenheit (C or F): ");
+        unit = scanner.next().toUpperCase();
 
-        double taxRate = (income >= 40000) ? 0.25 : 0.15;
-        System.out.println(taxRate);
+//        System.out.println(choice);
+//        System.out.println(temp);
+//        newTemp = (temp * 9/5) + 32;
+//        System.out.println(newTemp);
+//        System.out.println(choice);
+//        System.out.println(choice.equals("f"));
+//        System.out.println( (temp - 32) * 5/9);
+
+        newTemp = (unit.equals("F")) ? ((temp * 9/5) + 32) : (temp - 32) * 5/9;
+        System.out.println("The temperature is " + newTemp + "°" + unit);
+       scanner.close();
     }
 }
