@@ -3,50 +3,49 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+//        double temp = -10;
+//        boolean isSunny = false;
+//
+//        if(temp<=30 && temp >=0 && isSunny ){
+//            System.out.println("The weather is good 😀");
+//            System.out.println("It si sunny outside ☀️");
+//        }
+//        else if (temp<=30 && temp>=0 && !isSunny){
+//            System.out.println("The weather is good 😀");
+//            System.out.println("It is cloudy outside ⛅");
+//
+//        }
+//        else if (temp > 30 || temp <0 ){
+//            System.out.println("The weather is bad 😩");
+//        }
+
         Scanner scanner = new Scanner(System.in);
+        // username must be between 4-12 characters
+        // username must not contain spaces or underscores
 
-        // declare variables and operator
-        // // prompt for numbers and operators
-        // save to the variables
-        // use switch to define which operator we will do
-        // show the result
-
-        double num1;
-        double num2;
-        char operator;
-        double result = 0 ;
-        boolean validOperation = true;
-
-        System.out.print("Enter the first number: ");
-        num1 = scanner.nextDouble();
-
-        System.out.print("Enter the operator (+,-,* ,/,^): ");
-        operator = scanner.next().charAt(0);
-
-        System.out.print("Enter the second number: ");
-        num2 = scanner.nextDouble();
-
-        switch(operator){
-            case '+' -> result = num1 + num2;
-            case '-' -> result = num1 - num2;
-            case '*' -> result = num1 * num2;
-            case '/' -> {
-                if(num2 == 0){
-                    System.out.println("Cannot divide by zero");
-                    validOperation = false;
-                }else{
-                    result = num1 / num2;
-                }
-            }
-            case '^' -> result = Math.pow(num1,num2);
-            default -> {
-                System.out.println("Operator is not valid");
-                validOperation = false;
-            }
+        String username;
+        System.out.print("Enter your new username: ");
+        username = scanner.nextLine();
+//        System.out.println(username.length());
+//        if(username.length() > 4 && username.length() < 12 ){
+//            if(!username.contains(" ") && !username.contains("_")){
+//                System.out.println("Welcome " + username);
+//            }else {
+//                System.out.println("Username must not contain spaces or underscores");
+//            }
+//        }else {
+//            System.out.println("Username must be between 4-12 characters");
+//        }
+        if(username.length() < 4 || username.length() > 12){
+            System.out.println("Username must be between 4-12 characters");
         }
-       if(validOperation){
-           System.out.println(result);
-       }
+        else if(username.contains(" ") || username.contains("_")){
+            System.out.println("Username must not contain spaces or underscores");
+        }
+        else{
+            System.out.println("Welcome " + username);
+        }
+
 
         scanner.close();
     }
