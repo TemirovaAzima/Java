@@ -1,32 +1,37 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
+//      // Number guessing game
+        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
-//        int age =0;
-//
-//        do{
-//            System.out.println("Your age cannot be negative");
-//            System.out.print("Enter your age: ");
-//            age = scanner.nextInt();
-//
-//        }while(age<0); // do while runs ur code at least once
-//
-//        System.out.println("You are " + age + " years old");
+        int guess;
+        int attempts =0 ;
+        int max = 100;
+        int min = 1;
+        int randomNumber = random.nextInt(min,max+1);
 
-        int number = 0 ;
-//        while(number<1 || number > 10){
-//            System.out.print("Enter a number between 1-10: ");
-//            number = scanner.nextInt();
-//        }
+        System.out.println("Number Guessing Game");
+        System.out.println("Guess a number between " + min + "-" + max+ ": ");
+
         do{
-           System.out.print("Enter a number between 1-10: ");
-            number = scanner.nextInt();
-        }while(number<1 || number > 10);
-
-        System.out.println("You picked " + number);
+            System.out.print("Enter a guess: ");
+            guess = scanner.nextInt();
+            attempts++ ;
+            if(guess < randomNumber){
+                System.out.println("TOO LOW, try again");
+            }
+            else if(guess >randomNumber){
+                System.out.println("TOO HIGH, try again");
+            }
+            else {
+                System.out.println("Correct! The number was " + randomNumber);
+                System.out.println("# of attempts: " + attempts );
+            }
+        }while(guess != randomNumber);
 
         scanner.close();
     }
