@@ -1,18 +1,25 @@
-import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
-        // for loop = execute some code a certain amount of times
+    public static void main(String[] args)  {
+        // break = break out of a loop (STOP)
+        // continue = skip current iteration of a loop (SKIP)
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How many seconds to countdown from?:  ");
-        int start = scanner.nextInt();
+//        for(int i = 0; i< 10; i++){
+//
+//            if(i == 5){
+//                break;
+//            }
+//            System.out.print(i + " ");
+//        }
+//
+        for(int i =0 ; i<10 ; i++){
 
-        for(int i = start; i>0 ; i--){
-            System.out.println(i);
-            Thread.sleep(1000);
+            if(i==5){
+                continue;
+            }
+
+            System.out.print(i + " ");
         }
-        System.out.println("Happy new Year!");
-       scanner.close();
+
     }
 }
