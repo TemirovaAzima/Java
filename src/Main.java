@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)  {
@@ -6,23 +7,27 @@ public class Main {
         //               Used often with matrices or DS&A
         // follow dry principle , don't repeat yourself
 
-//        for(int i = 1; i<=9 ; i++){
-//            System.out.print(i + " ");
-//        }
-//        System.out.println();
-//        for (int i = 1; i<=9; i++){
-//            System.out.print(i+ " ");
-//        }
-//        System.out.println();
-//        for(int i = 1; i<=9; i++){
-//            System.out.print(i + " ");
-//        }
+        Scanner scanner = new Scanner(System.in);
 
-        for(int i = 1 ; i <=3 ; i++){
-            for(int j = 1; j<=9 ; j++){
-                System.out.print(j + " ");
+         int rows ;
+         int columns;
+         char symbol ;
+
+        System.out.print("Enter the # of rows: ");
+        rows = scanner.nextInt();
+
+        System.out.print("Enter the # of columns: ");
+        columns = scanner.nextInt();
+
+        System.out.print("Enter the symbol to use: ");
+        symbol = scanner.next().charAt(0);
+
+        for (int i = 0; i< rows; i++){
+            for(int j = 0; j < columns; j++){
+                System.out.print(symbol);
             }
             System.out.println();
         }
+         scanner.close();
     }
 }
