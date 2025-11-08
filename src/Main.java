@@ -40,6 +40,7 @@ public class Main {
             if(fruits[i].equals(target)){
                 System.out.println("element found at index: " + i);
                 isFound = true;
+                break;
             }
         }
 
