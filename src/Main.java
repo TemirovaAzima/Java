@@ -1,32 +1,47 @@
-
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
-//        String [] foods =  {"pizza","taco","hamburger"};
-//        // this array can only 3 elements and all elements are filled with values
+//        Scanner scanner = new Scanner(System.in);
+//        String[] foods = new String[4];
+//        String[] foods;
+//        int size;
 //
-//        // create empty array and dont set up empty curly braces
+//        System.out.print("What # of food do you want: ");
+//        size = scanner.nextInt();
+//        scanner.nextLine();
 //
-//        String [] food = {};
+//        foods = new String[size];
 //
-//        food[0] = "pizza";
-//        System.out.println(food.length); // it will show 0
-
-        String[] foods = new String[3];
-        foods[0] = "pizza";
-        foods[1] = "taco";
-        foods[2] = "hamburger";
-
-
-        System.out.println(foods.length);
-        System.out.println(foods[0]);
-
-//        for(int i = 0; i< foods.length ; i++){
-//            System.out.println(foods[i]);
+//        for(int i = 0 ; i < foods.length ; i++){
+//            System.out.print("Enter a food: ");
+//            foods[i] = scanner.nextLine();
 //        }
+//        for(String food: foods){
+//            System.out.println(food);
+//        }
+//        scanner.close();
+
+        Scanner scanner = new Scanner(System.in);
+
+        String[] foods ;
+        int size;
+
+        System.out.print("What # of food do you want: ");
+        size = scanner.nextInt();
+        scanner.nextLine();
+
+        foods = new String[size];
+
+        for(int i = 0 ; i < foods.length; i++){
+            System.out.print("Enter a food you want: ");
+            foods[i] = scanner.nextLine();
+        }
+
         for(String food : foods){
             System.out.println(food);
         }
+        scanner.close();
     }
 }
