@@ -1,24 +1,32 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
+
 
 public class Main {
     public static void main(String[] args)  {
-      // array = a collection of values of the same data type
 
-        String[] fruits = {"apple","banana","coconut","orange"};
-        fruits[0] ="orange";
-        System.out.println(fruits[3]); // u will get a reference of array not itself cause arrays are references not primitives
+//        String [] foods =  {"pizza","taco","hamburger"};
+//        // this array can only 3 elements and all elements are filled with values
+//
+//        // create empty array and dont set up empty curly braces
+//
+//        String [] food = {};
+//
+//        food[0] = "pizza";
+//        System.out.println(food.length); // it will show 0
 
-        int numOfFruits = fruits.length;
-        System.out.println(numOfFruits);
-        // enhanced loop
-//        for(String fruit : fruits){
-//            System.out.println(fruit);
+        String[] foods = new String[3];
+        foods[0] = "pizza";
+        foods[1] = "taco";
+        foods[2] = "hamburger";
+
+
+        System.out.println(foods.length);
+        System.out.println(foods[0]);
+
+//        for(int i = 0; i< foods.length ; i++){
+//            System.out.println(foods[i]);
 //        }
-        Arrays.sort(fruits);
-        Arrays.fill(fruits,"kok");
-        for(int i = 0 ; i< fruits.length; i++){
-            System.out.print(fruits[i] + " ");
+        for(String food : foods){
+            System.out.println(food);
         }
     }
 }
