@@ -3,50 +3,36 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-//        Scanner scanner = new Scanner(System.in);
+        // 2D arrays
+   //        String[] fruits = {"apple","orange","banana"};
+//        String[] vegetables = {"potato","onion","carrot"};
+//        String[] meats = {"chicken","pork","beef","fish"};
 //
-//     int[] numbers = {1,2,3,4,5,9,2,7};
-//        String[] fruits = {"apple","orange","banana"};
-//        boolean isFound = false;
-//        String target;
-//
-//        System.out.print("Enter a fruit to search for: ");
-//        target = scanner.nextLine();
-//       int target =  2;
-//
-//        for(int i = 0; i< fruits.length; i++){
-//            if (fruits[i].equals(target)){
-//                System.out.println("Element found at index " + i);
-//                isFound = true;
-//                break;
+//        String[][] groceries = {fruits, vegetables, meats};
+          String[][] groceries = {{"apple","orange","banana"},
+                                  {"potato","onion","carrot"},
+                                  {"chicken","pork","beef","fish"}  };
+
+          groceries[1][2] = "celery";
+//        for(String[] foods: groceries){
+//            for (String food : foods){
+//                System.out.print(food + " ");
 //            }
+//            System.out.println();
 //        }
-//
-//        if(!isFound){
-//            System.out.println("Element not found in the array");
-//        }
-//        scanner.close();
-
-        Scanner scanner = new Scanner(System.in);
-
-        String[] fruits = {"orange","apple", "pineapple","coconut"};
-        String target ;
-        boolean isFound = false;
-
-        System.out.print("Enter a fruit to search for: ");
-        target = scanner.nextLine();
-
-        for(int i = 0; i< fruits.length; i++){
-            if(fruits[i].equals(target)){
-                System.out.println("element found at index: " + i);
-                isFound = true;
-                break;
+//        System.out.println(fruits.length);
+        for(int i = 0; i < groceries.length; i++){
+            for(int j = 0 ; j<groceries[i].length; j++){
+                System.out.print(groceries[i][j] + " ");
             }
+            System.out.println();
         }
 
-        if(!isFound){
-            System.out.println("Element not found in the array");
-        }
+
+
+
+
+
 
     }
 }
