@@ -1,124 +1,81 @@
-import java.util.Random;
-import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+//        int x = 5;
+//        double y = 2.5;
+//       int  result = (int)( x + y);
+//        System.out.println(result);
 
-        // JAVA SLOT MACHINE
+//        int x = 5;
+//        if(x > 0) System.out.println("x is positive");
+//
+//        for(int i = 0; i < 3 ; i++) System.out.println("hell");
+//
+//        for(int i = 0 ; i <3 ; i++)
+//            System.out.println("H");
+//        System.out.println("W");
 
-        // DECLARE VARIABLES
-        // DISPLAY WELCOME MESSAGE
-        // PLAY IF BALANCE > 0
-        // ENTER BET AMOUNT
-        //       VERIFY IF BET > BALANCE
-        //       VERIFY IF BET > 0
-        //       SUBTRACT BET FROM BALANCE
-        // SPIN ROW
-        // PRINT ROW
-        // GET PAYOUT
-        // ASK TO PLAY AGAIN
-        // DISPLAY EXIT MESSAGE
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("***********************");
-        System.out.println("WELCOME TO SLOT MACHINE");
-        System.out.println("Symbols:🍒 🍉 🍋 🔔 ⭐");
-        System.out.println("***********************");
-
-
-        int balance = 100;
-        int bet ;
-        int payout;
-        String[] row;
-        String playAgain;
+//        int[] numbers = {1,2,3};
+//        System.out.println("Original length: " + numbers.length);
+//
+//        // numbers.length = 5 ;
+//
+//        int[] biggerArray = new int[5];
+//
+//        for (int i = 0 ; i < numbers.length; i++){
+//            biggerArray[i] = numbers[i];
+//        }
+//        biggerArray[3] = 4;
+//        biggerArray[4] = 5;
 
 
+//        System.out.println("New length: " + biggerArray.length);
+//        for (int num : biggerArray){
+//            System.out.print(num + " ");
+//        }
 
-        while(balance>0){
-            System.out.println("Current balance: $" + balance);
-            System.out.print("Place your bet amount: " );
-            bet = scanner.nextInt();
-            scanner.nextLine();
-            if(bet > balance){
-                System.out.println("INSUFFICIENT FUND");
-                continue;
-            }
-            else if (bet <= 0){
-                System.out.println("BET MUST BE GREATER THAN 0");
-                continue;
-            }
-            else{
-                balance -= bet;
-            }
-            System.out.println("Spinning....");
-            row = spinRow();
-            printRow(row);
-            payout = getPayout(row,bet);
+//         int[] arr = {1,2,3};
+//         System.out.println("Before: " + Arrays.toString(arr));
+//
+//         arr = Arrays.copyOf(arr,5);
+//         arr[3] = 4 ;
+//         arr[4] = 5;
+//
+//        System.out.println("After: " + Arrays.toString(arr));
 
-            if(payout > 0){
-                System.out.println("You won $" + payout);
-                balance += payout;
-            }
-            else {
-                System.out.println("Sorry you lost this round");
-            }
-            System.out.print("Do you want to play again? (Y/N): ");
-            playAgain = scanner.nextLine().toUpperCase();
+//        int a = 3; // 4 bytes
+//        short l = 32000; // 2 bytes
+//        double b = 3;  // 8 bytes
+//        float c = 3.14f; // 4 bytes
+//        double d = 3.14159299999944;  // 8 bytes
+//        long e = 100000000000L;  // 8 bytes
+//        char f = 'a'; // 2 bytes
+//        System.out.println(a + " " + b + " " + c + " " + d  + " "+ e );
 
-            if(!playAgain.equals("Y")){
-               break;
-            }
-        }
+//        char c = 10 ;
+//        short s = 20;
+//
+//        int result = c + s ;
+//        System.out.println( result);
 
-        System.out.println("GAME OVER! Your final balance is $" + balance);
+//        long l = 5L;
+//        float f = 2.5f;
+//        long result = (long) (l + f) ;
+//        System.out.println(result);
+//
+//        byte a = 100;
+//        byte b = 50;
+//        int c = ( a + b) ;
+//        System.out.println(c);
 
-    }
-    static String[] spinRow(){
-        Random random = new Random();
-        String[] symbols = {"🍒","🍉","🍋","🔔","⭐"};
-        String[] row =  new String[3];
-        for (int i = 0; i < 3 ; i++){
-            row[i] = symbols[random.nextInt(symbols.length)];
+        int a = 1000;
+        long b = 2000L;
+        long c = a + b ;
+        System.out.println(c);
 
-        }
-        return row;
-    }
-    static void printRow(String[] row){
-        System.out.println("**************");
-        System.out.println(" " + String.join(" | ",row));
-        System.out.println("**************");
-    }
-    static int getPayout(String[] row, int bet) {
-
-        if (row[0].equals(row[1]) && row[1].equals(row[2])) {
-            return switch (row[0]) {
-                case "🍒" -> bet * 3;
-                case "🍉" -> bet * 4;
-                case "🍋" -> bet * 5;
-                case "🔔" -> bet * 10;
-                case "⭐" -> bet * 20;
-                default -> 0;
-            };
-        } else if (row[0].equals(row[1])) {
-            return switch (row[0]) {
-                case "🍒" -> bet * 2;
-                case "🍉" -> bet * 3;
-                case "🍋" -> bet * 4;
-                case "🔔" -> bet * 5;
-                case "⭐" -> bet * 10;
-                default -> 0;
-            };
-
-        }else if (row[1].equals(row[2])) {
-            return switch (row[1]) {
-                case "🍒" -> bet * 2;
-                case "🍉" -> bet * 3;
-                case "🍋" -> bet * 4;
-                case "🔔" -> bet * 5;
-                case "⭐" -> bet * 10;
-                default -> 0;
-            };
-        }
-        return 0;
+        int a1 = 1000;
+        int b1 = 2000;
+        int c1 = a1 + b1;
+        System.out.println(c1);
     }
 }
