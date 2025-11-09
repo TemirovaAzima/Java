@@ -1,70 +1,52 @@
+import java.util.Random;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        // ROCK PAPER SCISSORS GAME
 
-        // JAVA QUIZ GAME
+        // DECLARE VARIABLES
+        // GET CHOICE FROM THE USER
+        // GET RANDOM CHOICE FROM THE COMPUTER
+        // CHECK WIN CONDITIONS
+        // ASK TO PLAY AGAIN
 
-        // Create questions of arrays -x -- QUESTIONS array[]
-        // options of array-x and answers -- OPTIONS array[][]
-        // Declare variables -x          -- DECLARE VARIABLES
-        // welcome message prompt message about the game -x -- WELCOME MESSAGE
-        // loop questions with options -x  -- QUESTION (loop)
-        // answer or guess -x         -- OPTIONS
-        // display Guess is wrong or correct -x --GET GUESS FROM USER
-        // display score -x               -- CHECK OUR GUESS
-        //                                -- DISPLAY FINAL SCORE
-
-        String[] questions = {"What is the main function of a router?",
-                              "Which part of the computer is considered the brain?",
-                              "What year was Facebook launched?",
-                              "What is known as the father of computers?",
-                              "What was the first programming language?"};
-
-        String[][] options = {{"1.Storing files","2.Encrypting data","3.Directing internet traffic","4.Managing passwords"},
-                                {"1. CPU ","2. Hard Drive","3. RAM","4. GPU"},
-                                {"1. 2000","2. 2004","3. 2006","4. 2008"},
-                                {"1. Steve Jobs","2. Bill Gates","3. Alan Turing","4. Charles Babbage"},
-                                {"1. COBOL","2. C","3. Fortran","4. Assembly"}};
-
-        int[] answers = {3,1,2,4,3};
-        int score = 0;
-        int guess;
+//        String rock = "rock";
+//        String paper = "paper";
+//        String scissors = "scissors";
+        String userChoice;
+        String computerChoice ;
+        boolean win = false;
 
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        System.out.println("Rock Paper Scissors Game!");
 
-        System.out.println("*****************************");
-        System.out.println("Welcome to the Java Quiz Game:");
-        System.out.println("*****************************");
-
-        for(int i = 0 ; i < questions.length;i++){
-            System.out.println(questions[i]);
-
-            for(String option : options[i]){
-                System.out.println(option);
+        do{
+            int randomChoice = random.nextInt(1,60);
+//            System.out.println(randomChoice);
+         if (randomChoice >= 1 && randomChoice <=20){
+            computerChoice = "rock";
+        }else if(randomChoice >20 && randomChoice <=40){
+            computerChoice = "paper";
+        }else {
+            computerChoice = "scissors";
             }
 
-            System.out.print("Choose an option: ");
-            guess = scanner.nextInt();
+            System.out.print("Enter your choice: ");
+            userChoice = scanner.nextLine().toLowerCase();
+            System.out.println("Computer choice: " + computerChoice);
 
-            if(guess == answers[i]){
-                System.out.println("********");
-                System.out.println("CORRECT!");
-                System.out.println("********");
-                score++;
+            if(computerChoice.equals(userChoice)){
+                System.out.println("You won! GOODBYE");
+                win = true;
+                break;
+            }else{
+                System.out.println("You lose 😥. Play again");
             }
-            else{
-                System.out.println("********");
-                System.out.println(" WRONG! ");
-                System.out.println("********");
-            }
-//            for(String[] option : options){
-//                for(String opt : option){
-//                    System.out.println(opt); // is incorrect will display all options
-//                }
-//            }
         }
-        System.out.println("Your final score is: " + score + " out of " + questions.length);
+        while(!win);
 
-        scanner.close();
+//        System.out.println(computerChoice);
+
     }
 }
