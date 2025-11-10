@@ -129,13 +129,59 @@ void main(){
 
     // SO 0 IS OCTAL , OX IS HEXADECIMAL , 0b IS BINARY
     // 0x MEANS BASE 16
+//
+//    String inHex = "2FA3";
+//
+//    System.out.println(0x2FA3);
+////    int value = (int) (2 * Math.pow(16,3) + 15 * Math.pow(16,2) + 10* 16 + 3 * Math.pow(16,0));
+//    int value = 2 * 16*16*16 + 15 * 16*16 + 10 * 16 + 3;
+//
+//    System.out.println(value);
 
-    String inHex = "2FA3";
+//    int [] arr = new int[15];
+//
+//    for(int i = 0 ; i < arr.length; i++){
+//        arr[i] = (int) (Math.random() * 20+1);
+//        System.out.println(arr[i] + " ");
+//
+//        if(arr[i] % 2 ==0 && arr[i] > 10){
+//            arr  = new int[i];
+////            System.out.println(arr[i]);
+//        }
+//    }
+//
+//    for(int i = arr.length-1; i > 0 ; i--){
+//        System.out.print(arr[i] + " ");
+//    }
 
-    System.out.println(0x2FA3);
-//    int value = (int) (2 * Math.pow(16,3) + 15 * Math.pow(16,2) + 10* 16 + 3 * Math.pow(16,0));
-    int value = 2 * 16*16*16 + 15 * 16*16 + 10 * 16 + 3;
+//    int[] arr = new int[15];
 
-    System.out.println(value);
+//// Fill the array with random numbers 1–20
+//    for (int i = 0; i < arr.length; i++) {
+//        arr[i] = (int) (Math.random() * 20 + 1);
+//        System.out.print(arr[i] + " ");
+//    }
+//
+//    System.out.println(); // move to a new line
+//
+//// Print even numbers > 10 in reverse order
+//    for (int i = arr.length - 1; i >= 0; i--) {
+//        if (arr[i] % 2 == 0 && arr[i] > 10) {
+//            System.out.print(arr[i] + " ");
+//        }
+//    }
 
+    int[] arr = new int[15];
+
+    for(int i = 0 ; i < arr.length; i++){
+        arr[i] =  (int)(Math.random() * 20 + 1);
+        System.out.print(arr[i] + " ");
+    }
+
+    System.out.println();
+    for(int i = arr.length -1; i >0 ; i--){
+        if(arr[i] % 2 ==0 && arr[i] > 10){
+            System.out.print(arr[i]+ " ");
+        }
+    }
 }
