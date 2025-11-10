@@ -91,28 +91,51 @@ void main(){
 //    if ( x == y ){  // == checking
 //        System.out.println("The x and y are equal");
 //    }
-    char stop = 'a' + 10;
-    String text = "";
-    for(char c = 'a'; c < stop; c+=2 ){
-        System.out.print(c - 'a');
-        System.out.print(' ');
-        text +=c;
-    }
-    System.out.println();
-    for(int i = text.length()-1 ; i>=0; i -=1){
-        System.out.print(text.charAt(i));
-    }
+//    char stop = 'a' + 10;
+//    String text = "";
+//    for(char c = 'a'; c < stop; c+=2 ){
+//        System.out.print(c - 'a');
+//        System.out.print(' ');
+//        text +=c;
+//    }
+//    System.out.println();
+//    for(int i = text.length()-1 ; i>=0; i -=1){
+//        System.out.print(text.charAt(i));
+//    }
+//    boolean running = false;
+//    int number      = 1337;
+//
+//    do {
+//        running = number > 0;
+//        System.out.println(number / 10);
+//        number /= 10;
+//    } while (running);
+//
+//    System.out.println(017 == 17); // this 0 is octal u cant ignore the zero if u convert to decimal
+    // it will become 15 and 15 = 17 no so it is false
+//    System.out.println(017);
+//    System.out.println(0b10101); // it is not -11 cause int is 32 bits so even though there is 1 in
+    // the first significant term , java convertes to decimal and it will become int not short or byte
+    // this is just how java works u know so before this 1 there is 27 zeros so i
+    // the first significant does not consider as a negative number keep in mind
 
+//    System.out.println(0xFF);
 
+//    byte b = 0b10101;
+//    short s = 0b10101;
+//    int i = 0b10101;
+//    System.out.println(b + s + i);
+//    System.out.println(0b10101L);
 
+    // SO 0 IS OCTAL , OX IS HEXADECIMAL , 0b IS BINARY
+    // 0x MEANS BASE 16
 
+    String inHex = "2FA3";
 
+    System.out.println(0x2FA3);
+//    int value = (int) (2 * Math.pow(16,3) + 15 * Math.pow(16,2) + 10* 16 + 3 * Math.pow(16,0));
+    int value = 2 * 16*16*16 + 15 * 16*16 + 10 * 16 + 3;
 
-
-
-
-
-
-
+    System.out.println(value);
 
 }
