@@ -239,34 +239,225 @@ void main() {
 //    for(int com : common){
 //        System.out.println(com + " ");
 //    }
-    int[] arr1 = new int[]{1, 4, 2, 0};
-    int[] arr2 = new int[]{2, 6, 0, 0, 4};
+//    int[] arr1 = new int[]{1, 4, 2, 0};
+//    int[] arr2 = new int[]{2, 6, 0, 0, 4};
 
-    int[] common = new int[Math.max(arr1.length , arr2.length)];
+//    int[] common = new int[Math.max(arr1.length , arr2.length)];
 //    int a = 3;
 //    int b = 9;
 //    int result = Math.max(3,9);
 //    System.out.println(Math.max(2,5));
+//
+//    int index =0 ;
+//
+//    for(int first : arr1){
+//        for(int second: arr2){
+//            if(first == second){
+//                common[index]= first;
+//                index++;
+//                break;
+//            }
+//        }
+//    }
+//
+//    int[] result = new int[index];
+//
+//    for(int i = 0 ; i < result.length; i++){
+//        result[i] = common[i];
+//    }
+//    for(int commEle : result){
+//        System.out.println(commEle);
+//    }
+//    int[] arr1 = new int[]{1, 4, 2, 0};
+//    int[] arr2 = new int[]{2, 6, 0, 0, 4};
+//
+//
+//    int[] combinedArr = new int[arr1.length + arr2.length];
+//
+//    for(int i = 0; i < arr1.length; i++){
+//        combinedArr[i] = arr1[i];
+//    }
+//
+//    for(int j = 0; j < arr2.length;j++){
+//        combinedArr[arr1.length+j] = arr2[j];
+//    }
+//
+//    for(int comman : combinedArr){
+//        System.out.println(comman);
+//    }
+//
+//    int smallest = 0;
+//    int index = 0;
+//
+//    for(int i =0; i < combinedArr.length;i++){
+//        if(combinedArr[i] < combinedArr[index]){
+//            smallest = combinedArr[i];
+//            index = i;
+//        }
+//    }
+//    System.out.println("smallest element: " + smallest);
+//
+//    int largest = 0;
+//    int index1 = 0;
+//    for(int i = 0; i < combinedArr.length;i++){
+//        if(combinedArr[i] > combinedArr[index1]){
+//            largest = combinedArr[i];
+//            index1 = i;
+//        }
+//    }
+//    System.out.println("largest element: " + largest);
+//
+//
+//    // looping
+//
+//    int[] rangeLoop = new int[largest - smallest + 1];
+//
+//    for(int i = smallest; i <rangeLoop.length ; i++){
+//        rangeLoop[i] = i;
+//        System.out.println(rangeLoop[i]);
+//    }
+//
+//    System.out.println("lollll");
+//    int[] result = new int[rangeLoop.length+combinedArr.length];
+//    int index2 = 0;
+//    for(int rangeL : rangeLoop){
+//        for(int combined: combinedArr){
+//            if(rangeL == combined){
+////                result[index2] = rangeL;
+////                index2++;
+////                break;
+//                System.out.println("Notthing");
+//            }else{
+//                result[index2]=rangeL;
+//                index2++;
+//            }
+//        }
+//    }
+//    for(int res: result){
+//        System.out.println(res);
+//    }
+////    int[] realResult = new int[]
+////    for (int i = 0; i < result.length;i++){
+////
+////    }
 
-    int index =0 ;
 
-    for(int first : arr1){
-        for(int second: arr2){
-            if(first == second){
-                common[index]= first;
-                index++;
+//    int[] arr1 = {1, 4, 2, 0};
+//    int[] arr2 = {2, 6, 0, 0, 4};
+//
+//    // 1️⃣ Combine both arrays
+//    int[] combinedArr = new int[arr1.length + arr2.length];
+//    for (int i = 0; i < arr1.length; i++) {
+//        combinedArr[i] = arr1[i];
+//    }
+//    for (int j = 0; j < arr2.length; j++) {
+//        combinedArr[arr1.length + j] = arr2[j];
+//    }
+//
+//    // 2️⃣ Find smallest and largest
+//    int smallest = combinedArr[0];
+//    int largest = combinedArr[0];
+//
+//    for (int i = 1; i < combinedArr.length; i++) {
+//        if (combinedArr[i] < smallest) smallest = combinedArr[i];
+//        if (combinedArr[i] > largest) largest = combinedArr[i];
+//    }
+//
+//    System.out.println("Smallest element: " + smallest);
+//    System.out.println("Largest element: " + largest);
+//
+//    // 3️⃣ Create range of numbers between smallest and largest
+//    int[] range = new int[largest - smallest + 1];
+//    int num = smallest;
+//    for (int i = 0; i < range.length; i++) {
+//        range[i] = num;
+//        num++;
+//        System.out.println(range[i]);
+//    }
+
+    int[] arr1 = new int[] {1,4,2,0};
+    int[] arr2 = new int[] {2,6,0,0,4};
+
+    // Combine both arrays
+    int[] combinedArr = new int[arr1.length+arr2.length];
+
+    for(int i = 0; i < arr1.length; i++){
+        combinedArr[i] = arr1[i];
+    }
+
+    for(int i = 0; i < arr2.length; i++){
+        combinedArr[arr1.length + i] = arr2[i];
+    }
+
+    for(int array: combinedArr){
+        System.out.println(array);
+
+    }
+
+    // find the smallest and largest
+
+    int smallest = combinedArr[0];
+    int largest = combinedArr[0];
+
+    for(int i = 0; i < combinedArr.length; i++){
+        if(combinedArr[i] < smallest) smallest = combinedArr[i];
+        if(combinedArr[i] > largest) largest = combinedArr[i];
+    }
+
+    System.out.println("Smallest element: " + smallest);
+    System.out.println("Largest element: " + largest);
+
+    // create range of numbers between smallest and largest
+
+
+    int[] range = new int[largest - smallest + 1];
+    int num = smallest;
+    for(int i = 0; i < range.length; i++ ){
+        range[i] = num;
+        num++;
+    }
+
+    // create an array for numbers NOT in combinedArr
+
+    int size= 0;
+    for(int i = 0 ; i < range.length; i++){
+        boolean isFound = false;
+
+        for(int j = 0; j < combinedArr.length; j++){
+
+            if(range[i] == combinedArr[i]){
+                isFound = true;
                 break;
             }
         }
+        if(!isFound){
+            size++;
+        }
     }
 
-    int[] result = new int[index];
+    System.out.println("Size" + size);
+    int[] result = new int[size];
+    int index =0;
+    for(int i = 0; i < range.length ; i++){
+        boolean isFound = false;
 
-    for(int i = 0 ; i < result.length; i++){
-        result[i] = common[i];
+        for(int j = 0 ; j < combinedArr.length; j++){
+            if(range[i] == combinedArr[j]){
+                isFound = true;
+                break;
+            }
+        }
+        if(!isFound){
+            result[index] = range[i];
+            index++;
+        }
     }
-    for(int commEle : result){
-        System.out.println(commEle);
+
+    // Print final numbers that do NOT appear in either array
+
+    System.out.println("Numbers between smallest and largest NOT in either array: ");
+    for (int finalResult : result){
+        System.out.print(finalResult + " ");
     }
 
 }
