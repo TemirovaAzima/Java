@@ -705,40 +705,52 @@ void main() {
 //    System.out.println(Arrays.toString(arr));
 //    in.close();
 
-    char[] letters = new char[5];
+//    char[] letters = new char[5];
+//
+//    for(int i = 0; i < letters.length; i++){
+//        letters[i] = (char) (Math.random() * 26 + 65);
+//    }
+//    Scanner scanner = new Scanner(System.in);
+//    boolean areThereLetters = true;
+//
+//    while(areThereLetters){
+//
+//        System.out.println(Arrays.toString(letters));
+//        char c = scanner.next().toUpperCase().charAt(0);
+//
+//        int count = 0;
+//
+//        for(int i = 0; i < letters.length;i++){
+//            if(letters[i] == c){
+//                letters[i] = 0;
+//                count++;
+//            }
+//        }
+//        if(count > 0){
+//            System.out.println(c + " - " + count);
+//        }
+//
+//        areThereLetters = false;
+//        for(char ch: letters){
+//            if(ch!= 0){
+//                areThereLetters= true;
+//                break;
+//            }
+//        }
+//    }
+//
+//    scanner.close();
 
-    for(int i = 0; i < letters.length; i++){
-        letters[i] = (char) (Math.random() * 26 + 65);
-    }
-    Scanner scanner = new Scanner(System.in);
-    boolean areThereLetters = true;
-
-    while(areThereLetters){
-
-        System.out.println(Arrays.toString(letters));
-        char c = scanner.next().toUpperCase().charAt(0);
-
-        int count = 0;
-
-        for(int i = 0; i < letters.length;i++){
-            if(letters[i] == c){
-                letters[i] = 0;
-                count++;
-            }
-        }
-        if(count > 0){
-            System.out.println(c + " - " + count);
-        }
-
-        areThereLetters = false;
-        for(char ch: letters){
-            if(ch!= 0){
-                areThereLetters= true;
-                break;
-            }
-        }
-    }
-
-    scanner.close();
-
+  String inHex = "2FA3";
+  int value = 0;
+  int h = 0;
+  for(int i = 0 ; i < inHex.length(); i++){
+      switch(inHex.charAt(i)){
+          case '0','1','2','3','4','5','6','7','8','9' -> h = inHex.charAt(i) - '0';
+          case 'A','B','C','D','E','F' -> h = inHex.charAt(i) - 'A' + 10;
+      }
+      value += (int) (h * Math.pow(16, inHex.length() -1 -i ));
+  }
+    System.out.println(0x2FA3);
+    System.out.println(value);
 }
