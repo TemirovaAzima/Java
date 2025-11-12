@@ -526,16 +526,28 @@ void main() {
 //    if(v % 4 == 1 && v > 12 || v < 7 ) System.out.println("Ok?");
 //    System.out.println((int) Math.random());
 
-    int[] tab = {1,2,3,4,4,3,2,1};
-    boolean result = true ;
+//    int[] tab = {1,2,3,4,4,3,2,1};
+//    boolean result = true ;
+//
+//    for(int i =0, j = tab.length-1 ; i < tab.length/ 2 ; i++, j--){
+//        if(tab[i] != tab[j]){
+//            result = false;
+//            break;
+//        }
+//    }
+//    System.out.println(result);
 
-    for(int i =0, j = tab.length-1 ; i < tab.length/ 2 ; i++, j--){
-        if(tab[i] != tab[j]){
-            result = false;
-            break;
-        }
-    }
-    System.out.println(result);
+       int[] tab = {1,2,3,4,4,3,2,1};
+      boolean isSymmetrical = true;
+
+      for (int i =0; i < tab.length/2; i++){
+          if(tab[i] != tab[tab.length-1 - i]){
+              isSymmetrical = false;
+              break;
+          }
+      }
+    System.out.println(isSymmetrical);
+
 
 
 
