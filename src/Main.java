@@ -662,49 +662,83 @@ void main() {
 //        }
 //
 //    }while(!allZero);
+//
+//    Scanner in = new Scanner(System.in);
+//
+//    char[] arr = new char[5];
+//
+//    for(int i = 0; i < arr.length; i++){
+//        arr[i] = (char)(Math.random() * 26 + 65);
+//        System.out.print(arr[i] + " ");
+//    }
+//
+//    boolean allZero = false;
+//    int occurrence = 0;
+//    do {
+//        System.out.println("Enter a letter between A-Z: ");
+//        char c = in.next().toUpperCase().charAt(0);
+//
+//
+//        for(int i = 0; i < arr.length;i++){
+//            if(arr[i] == c){
+//                arr[i] = 0;
+//                occurrence++;
+//            }
+//        }
+//
+//        System.out.println("The occurrence of  " + c + " : " + occurrence);
+//        for(char ch : arr){
+//            ch = ch == 0 ? '0': ch;
+//            System.out.print(ch + " ");
+//        }
+//        System.out.println();
+//
+//        allZero = true;
+//        for(char ch : arr){
+//            if(ch !=0){
+//                allZero = false;
+//                break;
+//            }
+//        }
+//    }while(!allZero);
+//
+//    System.out.println(Arrays.toString(arr));
+//    in.close();
 
-    Scanner in = new Scanner(System.in);
+    char[] letters = new char[5];
 
-    char[] arr = new char[5];
-
-    for(int i = 0; i < arr.length; i++){
-        arr[i] = (char)(Math.random() * 26 + 65);
-        System.out.print(arr[i] + " ");
+    for(int i = 0; i < letters.length; i++){
+        letters[i] = (char) (Math.random() * 26 + 65);
     }
+    Scanner scanner = new Scanner(System.in);
+    boolean areThereLetters = true;
 
-    boolean allZero = false;
-    int occurrence = 0;
-    do {
-        System.out.println("Enter a letter between A-Z: ");
-        char c = in.next().toUpperCase().charAt(0);
+    while(areThereLetters){
 
+        System.out.println(Arrays.toString(letters));
+        char c = scanner.next().toUpperCase().charAt(0);
 
-        for(int i = 0; i < arr.length;i++){
-            if(arr[i] == c){
-                arr[i] = 0;
-                occurrence++;
+        int count = 0;
+
+        for(int i = 0; i < letters.length;i++){
+            if(letters[i] == c){
+                letters[i] = 0;
+                count++;
             }
         }
-
-        System.out.println("The occurrence of  " + c + " : " + occurrence);
-        for(char ch : arr){
-            ch = ch == 0 ? '0': ch;
-            System.out.print(ch + " ");
+        if(count > 0){
+            System.out.println(c + " - " + count);
         }
-        System.out.println();
 
-        allZero = true;
-        for(char ch : arr){
-            if(ch !=0){
-                allZero = false;
+        areThereLetters = false;
+        for(char ch: letters){
+            if(ch!= 0){
+                areThereLetters= true;
                 break;
             }
         }
-    }while(!allZero);
+    }
 
-    System.out.println(Arrays.toString(arr));
-    in.close();
-
-
+    scanner.close();
 
 }
