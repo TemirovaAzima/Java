@@ -537,18 +537,87 @@ void main() {
 //    }
 //    System.out.println(result);
 
-       int[] tab = {1,2,3,4,4,3,2,1};
-      boolean isSymmetrical = true;
+//       int[] tab = {1,2,3,4,4,3,2,1};
+//      boolean isSymmetrical = true;
+//
+//      for (int i =0; i < tab.length/2; i++){
+//          if(tab[i] != tab[tab.length-1 - i]){
+//              isSymmetrical = false;
+//              break;
+//          }
+//      }
+//    System.out.println(isSymmetrical);
 
-      for (int i =0; i < tab.length/2; i++){
-          if(tab[i] != tab[tab.length-1 - i]){
-              isSymmetrical = false;
-              break;
-          }
-      }
-    System.out.println(isSymmetrical);
+    // exercise 2
 
+//    boolean[] arr = {true, false, true , true, false , false, true};
+    boolean[] arr = new boolean[10];
 
+    for(int i = 0; i < arr.length; i++){
+        arr[i] = Math.random() < 0.5 ? true : false;  // or Math.random() < 0.5
+    }
+    System.out.println(Arrays.toString(arr));
 
+    int sizeT = 0;
+    int sizeF = 0;
 
+//    for(int i = 0; i < arr.length; i++){
+//        if(arr[i]){
+//            sizeT++;
+//        }
+//        else{
+//            sizeF++;
+//        }
+//    }
+    for(boolean elem: arr){
+        if (elem){
+            sizeT++;
+        }
+        else{
+            sizeF++;
+        }
+    }
+
+    boolean[] valueT = new boolean[sizeT];
+    boolean[] valueF = new boolean[sizeF];
+
+    for(int i = 0; i < valueT.length; i++){
+        valueT[i] = true;
+    }
+
+//    for (int i = 0; i < valueF.length;i++){
+//        valueF[i] = false;
+//    }
+    System.out.println(Arrays.toString(valueT));
+    System.out.println(Arrays.toString(valueF));
+
+    // teacher code
+    boolean[] booleans = new boolean[10];
+
+    for(int i = 0 ; i < booleans.length; i++){
+        booleans[i] = Math.random() < 0.5;
+    }
+
+    for(boolean b : booleans){
+        System.out.println(b + " ");
+    }
+
+    int countOfTrues = 0;
+
+    for(boolean b : booleans){
+        if(b){
+            countOfTrues++;
+        }
+    }
+
+    boolean[] trues  = new boolean[countOfTrues];
+    boolean[] falses = new boolean[booleans.length - countOfTrues];
+
+    for(int i = 0; i < trues.length; i++){
+        trues[i] = true;
+    }
+
+    System.out.println(Arrays.toString(booleans));
+    System.out.println(Arrays.toString(trues));
+    System.out.println(Arrays.toString(falses));
 }
