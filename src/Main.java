@@ -375,89 +375,168 @@ void main() {
 //        System.out.println(range[i]);
 //    }
 
-    int[] arr1 = new int[] {1,4,2,0};
-    int[] arr2 = new int[] {2,6,0,0,4};
-
-    // Combine both arrays
-    int[] combinedArr = new int[arr1.length+arr2.length];
-
-    for(int i = 0; i < arr1.length; i++){
-        combinedArr[i] = arr1[i];
-    }
-
-    for(int i = 0; i < arr2.length; i++){
-        combinedArr[arr1.length + i] = arr2[i];
-    }
-
-    for(int array: combinedArr){
-        System.out.println(array);
-
-    }
-
-    // find the smallest and largest
-
-    int smallest = combinedArr[0];
-    int largest = combinedArr[0];
-
-    for(int i = 0; i < combinedArr.length; i++){
-        if(combinedArr[i] < smallest) smallest = combinedArr[i];
-        if(combinedArr[i] > largest) largest = combinedArr[i];
-    }
-
-    System.out.println("Smallest element: " + smallest);
-    System.out.println("Largest element: " + largest);
-
-    // create range of numbers between smallest and largest
-
-
-    int[] range = new int[largest - smallest + 1];
-    int num = smallest;
-    for(int i = 0; i < range.length; i++ ){
-        range[i] = num;
-        num++;
-    }
-
-    // create an array for numbers NOT in combinedArr
-
-    int size= 0;
-    for(int i = 0 ; i < range.length; i++){
-        boolean isFound = false;
-
-        for(int j = 0; j < combinedArr.length; j++){
-
-            if(range[i] == combinedArr[i]){
-                isFound = true;
-                break;
-            }
-        }
-        if(!isFound){
-            size++;
-        }
-    }
-
-    System.out.println("Size" + size);
-    int[] result = new int[size];
-    int index =0;
-    for(int i = 0; i < range.length ; i++){
-        boolean isFound = false;
-
-        for(int j = 0 ; j < combinedArr.length; j++){
-            if(range[i] == combinedArr[j]){
-                isFound = true;
-                break;
-            }
-        }
-        if(!isFound){
-            result[index] = range[i];
-            index++;
-        }
-    }
+//    int[] arr1 = new int[] {1,4,2,0};
+//    int[] arr2 = new int[] {2,6,0,0,4};
+//
+//    // Combine both arrays
+//    int[] combinedArr = new int[arr1.length+arr2.length];
+//
+//    for(int i = 0; i < arr1.length; i++){
+//        combinedArr[i] = arr1[i];
+//    }
+//
+//    for(int i = 0; i < arr2.length; i++){
+//        combinedArr[arr1.length + i] = arr2[i];
+//    }
+//
+//    for(int array: combinedArr){
+//        System.out.println(array);
+//
+//    }
+//
+//    // find the smallest and largest
+//
+//    int smallest = combinedArr[0];
+//    int largest = combinedArr[0];
+//
+//    for(int i = 0; i < combinedArr.length; i++){
+//        if(combinedArr[i] < smallest) smallest = combinedArr[i];
+//        if(combinedArr[i] > largest) largest = combinedArr[i];
+//    }
+//
+//    System.out.println("Smallest element: " + smallest);
+//    System.out.println("Largest element: " + largest);
+//
+//    // create range of numbers between smallest and largest
+//
+//
+//    int[] range = new int[largest - smallest + 1];
+//    int num = smallest;
+//    for(int i = 0; i < range.length; i++ ){
+//        range[i] = num;
+//        num++;
+//    }
+//
+//    // create an array for numbers NOT in combinedArr
+//
+//    int size= 0;
+//    for(int i = 0 ; i < range.length; i++){
+//        boolean isFound = false;
+//
+//        for(int j = 0; j < combinedArr.length; j++){
+//
+//            if(range[i] == combinedArr[i]){
+//                isFound = true;
+//                break;
+//            }
+//        }
+//        if(!isFound){
+//            size++;
+//        }
+//    }
+//
+//    System.out.println("Size" + size);
+//    int[] result = new int[size];
+//    int index =0;
+//    for(int i = 0; i < range.length ; i++){
+//        boolean isFound = false;
+//
+//        for(int j = 0 ; j < combinedArr.length; j++){
+//            if(range[i] == combinedArr[j]){
+//                isFound = true;
+//                break;
+//            }
+//        }
+//        if(!isFound){
+//            result[index] = range[i];
+//            index++;
+//        }
+//    }
 
     // Print final numbers that do NOT appear in either array
+//
+//    System.out.println("Numbers between smallest and largest NOT in either array: ");
+//    for (int finalResult : result){
+//        System.out.print(finalResult + " ");
+//    }
 
-    System.out.println("Numbers between smallest and largest NOT in either array: ");
-    for (int finalResult : result){
-        System.out.print(finalResult + " ");
+//    int[] a = {3,3}, b = a;
+//    a[0] =1 ;
+//    b[1] = 2;
+//
+//    System.out.println(a[0] + " " + a[1] + " " + b[0] + " " + b[1]);
+//
+//    int x = 12;
+//    int y = x;
+//    x = 13;
+//    System.out.println(x + " " + y);
+//
+//    String name = "Azima";
+//    String friendName = name;
+//
+//    name = "AzimaKim";
+//    System.out.println(name + " " + friendName);
+
+//    int[][] a = {{1,2,3},{4,5},{6,7},{8,9}};
+//    System.out.println( a.length+ a[1].length+ a[0][2]);
+//    System.out.println("Hello"=="11");
+//    System.out.println(0187);
+//    long num = 880L;
+//    int day = 2;
+//     String dayName = switch(day){
+//         case 1 -> "Monday";
+//         case 2 -> {
+//             System.out.println("Logging Tuesday");
+//             int temp = day * 2;
+//             yield "Tuesday";
+//         }
+//         default -> "Unknown";
+//     };
+//
+//    System.out.println(dayName);
+//    int a = 3, b = 6;
+//    int c = a++ + ++b;
+    // a++ is use the current value of a first, then increase a by 1 afterwards
+//    System.out.println(a + " " + b + " " + c);
+
+//    int sum = 0;
+//     for(int i = 4; i < 12; ++i){
+//         if(i % 5 == 1) continue;
+//         sum+=i;
+//     }
+//    System.out.println(sum);
+//
+//    for(int i = 1; i<=5; i++){
+//        System.out.print(i>2 ^ i <=4 ? "T" : "F");
+//    }
+//    System.out.println();
+//    int k = 4;
+//    int[] arr = new int[4];
+//    int i = 0;
+//    while(k < 12){
+//        if(k / 6 ==1) arr[i]++;
+//        i++;
+//        if(i == 4) i =0;
+//        k++;
+//    }
+//    System.out.println(Arrays.toString(arr));
+//
+//    // 5
+//    int v = 15;
+//    if(v % 4 == 1 && v > 12 || v < 7 ) System.out.println("Ok?");
+//    System.out.println((int) Math.random());
+
+    int[] tab = {1,2,3,4,4,3,2,1};
+    boolean result = true ;
+
+    for(int i =0, j = tab.length-1 ; i < tab.length/ 2 ; i++, j--){
+        if(tab[i] != tab[j]){
+            result = false;
+            break;
+        }
     }
+    System.out.println(result);
+
+
 
 }
