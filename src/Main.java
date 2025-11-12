@@ -551,73 +551,160 @@ void main() {
     // exercise 2
 
 //    boolean[] arr = {true, false, true , true, false , false, true};
-    boolean[] arr = new boolean[10];
-
-    for(int i = 0; i < arr.length; i++){
-        arr[i] = Math.random() < 0.5 ? true : false;  // or Math.random() < 0.5
-    }
-    System.out.println(Arrays.toString(arr));
-
-    int sizeT = 0;
-    int sizeF = 0;
-
+//    boolean[] arr = new boolean[10];
+//
 //    for(int i = 0; i < arr.length; i++){
-//        if(arr[i]){
+//        arr[i] = Math.random() < 0.5 ? true : false;  // or Math.random() < 0.5
+//    }
+//    System.out.println(Arrays.toString(arr));
+//
+//    int sizeT = 0;
+//    int sizeF = 0;
+//
+////    for(int i = 0; i < arr.length; i++){
+////        if(arr[i]){
+////            sizeT++;
+////        }
+////        else{
+////            sizeF++;
+////        }
+////    }
+//    for(boolean elem: arr){
+//        if (elem){
 //            sizeT++;
 //        }
 //        else{
 //            sizeF++;
 //        }
 //    }
-    for(boolean elem: arr){
-        if (elem){
-            sizeT++;
-        }
-        else{
-            sizeF++;
-        }
-    }
-
-    boolean[] valueT = new boolean[sizeT];
-    boolean[] valueF = new boolean[sizeF];
-
-    for(int i = 0; i < valueT.length; i++){
-        valueT[i] = true;
-    }
-
-//    for (int i = 0; i < valueF.length;i++){
-//        valueF[i] = false;
+//
+//    boolean[] valueT = new boolean[sizeT];
+//    boolean[] valueF = new boolean[sizeF];
+//
+//    for(int i = 0; i < valueT.length; i++){
+//        valueT[i] = true;
 //    }
-    System.out.println(Arrays.toString(valueT));
-    System.out.println(Arrays.toString(valueF));
+//
+////    for (int i = 0; i < valueF.length;i++){
+////        valueF[i] = false;
+////    }
+//    System.out.println(Arrays.toString(valueT));
+//    System.out.println(Arrays.toString(valueF));
+//
+//    // teacher code
+//    boolean[] booleans = new boolean[10];
+//
+//    for(int i = 0 ; i < booleans.length; i++){
+//        booleans[i] = Math.random() < 0.5;
+//    }
+//
+//    for(boolean b : booleans){
+//        System.out.println(b + " ");
+//    }
+//
+//    int countOfTrues = 0;
+//
+//    for(boolean b : booleans){
+//        if(b){
+//            countOfTrues++;
+//        }
+//    }
+//
+//    boolean[] trues  = new boolean[countOfTrues];
+//    boolean[] falses = new boolean[booleans.length - countOfTrues];
+//
+//    for(int i = 0; i < trues.length; i++){
+//        trues[i] = true;
+//    }
+//
+//    System.out.println(Arrays.toString(booleans));
+//    System.out.println(Arrays.toString(trues));
+//    System.out.println(Arrays.toString(falses));
 
-    // teacher code
-    boolean[] booleans = new boolean[10];
+//    Scanner in = new Scanner(System.in);
+//
+//    char[] arr = new char[5];
+//
+//    for(int i = 0; i < arr.length; i++){
+//        arr[i] = (char) (Math.random() * 26 + 65);
+//        System.out.println(arr[i]);
+//    }
+//    char c ;
+//    int numOccurrence = 0 ;
+//    boolean isTerminated = false;
+//      boolean  allZero = false;
+//
+//    do {
+//
+//        System.out.println("Enter a letter between A - Z : ");
+//        c = in.next().toUpperCase().charAt(0);
 
-    for(int i = 0 ; i < booleans.length; i++){
-        booleans[i] = Math.random() < 0.5;
+//        for(int i = 0; )
+//         if(true){
+//
+//             switch(c){
+//                 case 'A','B'
+//             }
+//         }
+//        for (int i = 0; i < arr.length; i++){
+//            if(arr[i] == c){
+//                numOccurrence++;
+//                arr[i] =0;
+//            }
+//
+//            allZero = true;
+//            if(char ch : arr){
+//               if(ch!=0){
+//                   allZero = false;
+//                   break;
+//               }
+//            }
+//        }
+//
+//    }while(!allZero);
+
+    Scanner in = new Scanner(System.in);
+
+    char[] arr = new char[5];
+
+    for(int i = 0; i < arr.length; i++){
+        arr[i] = (char)(Math.random() * 26 + 65);
+        System.out.print(arr[i] + " ");
     }
 
-    for(boolean b : booleans){
-        System.out.println(b + " ");
-    }
+    boolean allZero = false;
+    int occurrence = 0;
+    do {
+        System.out.println("Enter a letter between A-Z: ");
+        char c = in.next().toUpperCase().charAt(0);
 
-    int countOfTrues = 0;
 
-    for(boolean b : booleans){
-        if(b){
-            countOfTrues++;
+        for(int i = 0; i < arr.length;i++){
+            if(arr[i] == c){
+                arr[i] = 0;
+                occurrence++;
+            }
         }
-    }
 
-    boolean[] trues  = new boolean[countOfTrues];
-    boolean[] falses = new boolean[booleans.length - countOfTrues];
+        System.out.println("The occurrence of  " + c + " : " + occurrence);
+        for(char ch : arr){
+            ch = ch == 0 ? '0': ch;
+            System.out.print(ch + " ");
+        }
+        System.out.println();
 
-    for(int i = 0; i < trues.length; i++){
-        trues[i] = true;
-    }
+        allZero = true;
+        for(char ch : arr){
+            if(ch !=0){
+                allZero = false;
+                break;
+            }
+        }
+    }while(!allZero);
 
-    System.out.println(Arrays.toString(booleans));
-    System.out.println(Arrays.toString(trues));
-    System.out.println(Arrays.toString(falses));
+    System.out.println(Arrays.toString(arr));
+    in.close();
+
+
+
 }
