@@ -911,29 +911,48 @@ void main() {
         System.out.print(num2 + " ");
     }
 
+    System.out.println();
     int[] c = new int[a.length + b.length];
 
-    for(int i =0 ; i < a.length; i++){
-        c[i] = a[i];
-    }
+    int i = 0, j =b.length - 1 , k = 0;
 
-    for(int i = 0 ; i < b.length; i++){
-        c[a.length + i] = b[i] ;
-    }
-
-    for(int i = 0 ; i < c.length- 1 ; i++){
-        for(int j = 0; j < c.length - 1 - i; j++){
-            if(c[j] > c[j+1]){
-                int temp = c[j];
-                c[j] = c[j+1];
-                c[j+1] = temp;
-            }
+    while(i < a.length && j >=0){
+        if(a[i] < b[j]){
+            c[k++] = a[i++];
+        }
+        else{
+            c[k++] = b[j--];
         }
     }
-    System.out.println();
+    while(i< a.length) c[k++] = a[i++];
+    while(j >=0) c[k++] = b[j--];
 
-    for(int mergedArr : c){
-        System.out.print(mergedArr + " ");
+
+    for(int num3: c){
+        System.out.print(num3+ " ");
     }
+//
+//    for(int i =0 ; i < a.length; i++){
+//        c[i] = a[i];
+//    }
+//
+//    for(int i = 0 ; i < b.length; i++){
+//        c[a.length + i] = b[i] ;
+//    }
+//
+//    for(int i = 0 ; i < c.length- 1 ; i++){
+//        for(int j = 0; j < c.length - 1 - i; j++){
+//            if(c[j] > c[j+1]){
+//                int temp = c[j];
+//                c[j] = c[j+1];
+//                c[j+1] = temp;
+//            }
+//        }
+//    }
+//    System.out.println();
+//
+//    for(int mergedArr : c){
+//        System.out.print(mergedArr + " ");
+//    }
 }
 
