@@ -741,16 +741,60 @@ void main() {
 //
 //    scanner.close();
 
-  String inHex = "2FA3";
-  int value = 0;
-  int h = 0;
-  for(int i = 0 ; i < inHex.length(); i++){
-      switch(inHex.charAt(i)){
-          case '0','1','2','3','4','5','6','7','8','9' -> h = inHex.charAt(i) - '0';
-          case 'A','B','C','D','E','F' -> h = inHex.charAt(i) - 'A' + 10;
-      }
-      value += (int) (h * Math.pow(16, inHex.length() -1 -i ));
-  }
-    System.out.println(0x2FA3);
-    System.out.println(value);
+//  String inHex = "2FA3";
+//  int value = 0;
+//  int h = 0;
+//  for(int i = 0 ; i < inHex.length(); i++){
+//      switch(inHex.charAt(i)){
+//          case '0','1','2','3','4','5','6','7','8','9' -> h = inHex.charAt(i) - '0';
+//          case 'A','B','C','D','E','F' -> h = inHex.charAt(i) - 'A' + 10;
+//      }
+//      value += (int) (h * Math.pow(16, inHex.length() -1 -i ));
+//  }
+//    System.out.println(0x2FA3);
+//    System.out.println(value);
+
+    // finding the longest consecutive length of a number
+
+    Scanner in = new Scanner(System.in);
+
+   int currentNumber ;
+   int previousNumber;
+   int currentCount = 1;
+   int maxCount = 1;
+   int numberWithMax =0 ;
+
+   previousNumber = in.nextInt();
+
+   if(previousNumber == 0){
+       System.out.println("No numbers entered");
+   }
+
+   while(true){
+       currentNumber = in.nextInt();
+       if(currentNumber ==0){
+           break;
+       }
+
+       if(currentNumber == previousNumber){
+           currentCount++;
+       }
+       else{
+           if(currentCount > maxCount ){
+               maxCount = currentCount;
+               numberWithMax = previousNumber;
+           }
+           currentCount = 1;
+       }
+       previousNumber = currentNumber;
+   }
+
+   if (currentCount > maxCount){
+       maxCount = currentCount;
+       numberWithMax = previousNumber;
+   }
+
+    System.out.println("The length of the longest consecutive sequence is : " + maxCount + " times " + numberWithMax);
+
 }
+
