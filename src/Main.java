@@ -870,67 +870,67 @@ void main() {
 //    for(int num: arr1){
 //        System.out.print(num + " ");
 //    }
+//
+//    int[] a = new int[(int) (Math.random() * 6 + 1)];
+//    int[] b = new int[(int) (Math.random() * 6 + 1)];
+//
+//    for(int i = 0 ; i < a.length; i++){
+//        a[i] = (int) (Math.random() * 6 + 1);
+//    }
+//
+//    for(int i = 0; i< b.length;i++){
+//        b[i] = (int) (Math.random() * 6 + 1);
+//    }
 
-    int[] a = new int[(int) (Math.random() * 6 + 1)];
-    int[] b = new int[(int) (Math.random() * 6 + 1)];
-
-    for(int i = 0 ; i < a.length; i++){
-        a[i] = (int) (Math.random() * 6 + 1);
-    }
-
-    for(int i = 0; i< b.length;i++){
-        b[i] = (int) (Math.random() * 6 + 1);
-    }
-
-    for(int i = 0; i < a.length - 1; i++){
-        for(int j = 0; j < a.length - 1 -i ; j++){
-            if( a[j] > a[j+1] ){
-                int temp = a[j];
-                a[j] = a[j+1];
-                a[j+1] = temp;
-            }
-        }
-    }
-
-    for(int i = 0; i < b.length - 1; i++){
-        for(int j = 0; j < b.length - 1 -i ; j++){
-            if( b[j] < b[j+1] ){
-                int temp = b[j];
-                b[j] = b[j+1];
-                b[j+1] = temp;
-            }
-        }
-    }
-
-    for(int num1: a){
-        System.out.print(num1 + " ");
-    }
-
-    System.out.println();
-    for(int num2: b){
-        System.out.print(num2 + " ");
-    }
-
-    System.out.println();
-    int[] c = new int[a.length + b.length];
-
-    int i = 0, j =b.length - 1 , k = 0;
-
-    while(i < a.length && j >=0){
-        if(a[i] < b[j]){
-            c[k++] = a[i++];
-        }
-        else{
-            c[k++] = b[j--];
-        }
-    }
-    while(i< a.length) c[k++] = a[i++];
-    while(j >=0) c[k++] = b[j--];
-
-
-    for(int num3: c){
-        System.out.print(num3+ " ");
-    }
+//    for(int i = 0; i < a.length - 1; i++){
+//        for(int j = 0; j < a.length - 1 -i ; j++){
+//            if( a[j] > a[j+1] ){
+//                int temp = a[j];
+//                a[j] = a[j+1];
+//                a[j+1] = temp;
+//            }
+//        }
+//    }
+//
+//    for(int i = 0; i < b.length - 1; i++){
+//        for(int j = 0; j < b.length - 1 -i ; j++){
+//            if( b[j] < b[j+1] ){
+//                int temp = b[j];
+//                b[j] = b[j+1];
+//                b[j+1] = temp;
+//            }
+//        }
+//    }
+//
+//    for(int num1: a){
+//        System.out.print(num1 + " ");
+//    }
+//
+//    System.out.println();
+//    for(int num2: b){
+//        System.out.print(num2 + " ");
+//    }
+//
+//    System.out.println();
+//    int[] c = new int[a.length + b.length];
+//
+//    int i = 0, j =b.length - 1 , k = 0;
+//
+//    while(i < a.length && j >=0){
+//        if(a[i] < b[j]){
+//            c[k++] = a[i++];
+//        }
+//        else{
+//            c[k++] = b[j--];
+//        }
+//    }
+//    while(i< a.length) c[k++] = a[i++];
+//    while(j >=0) c[k++] = b[j--];
+//
+//
+//    for(int num3: c){
+//        System.out.print(num3+ " ");
+//    }
 //
 //    for(int i =0 ; i < a.length; i++){
 //        c[i] = a[i];
@@ -954,5 +954,41 @@ void main() {
 //    for(int mergedArr : c){
 //        System.out.print(mergedArr + " ");
 //    }
+
+//    int n1d = 23;
+//    int n1b = 0b10111;
+//    int n1o = 027;
+//    int n1x = 0x17;
+//    System.out.println(n1d);
+//    System.out.println(n1b);
+//    System.out.println(n1o);
+//    System.out.println(n1x);
+
+    int k = 3;
+    int x ;
+    x = 1 << k;
+    System.out.println(x);
+    // exercise 4
+    int n = -128;
+    int k1 = n & 0xFF;
+    System.out.println(k1);
+    // exercise 3
+    int k3 = 2;
+    int x1 = 0b110100;
+    x1 = x1 >> k3 & 1;
+    System.out.println(x1);
+    // exercise 5
+
+    int value = 1793;
+//    int k4 = value & (2 *0xFF + 0xFF ) ; incorrect
+    int k4 = (value >> 8) & 0xFF;
+    System.out.println(k4);
+
+    int n2 = 123456;
+    int m = ((n2 >>16) & 0xFF) << 16;
+    System.out.println(m);
+
+
+
 }
 
