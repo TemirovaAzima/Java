@@ -835,23 +835,40 @@ void main() {
 //        }
 //    }
 
-    int[] arr = {153,333,370,515,407,80};
+//    int[] arr = {153,333,370,515,407,80};
+//
+//    for(int i = 0; i < arr.length; i++){
+//
+//        int num = arr[i];
+//        int temp = num;
+//        int sum = 0;
+//        int digitLength = String.valueOf(num).length();
+//
+//        while(temp>0){
+//            int eachDigit = temp % 10 ;
+//            sum += (int) (Math.pow(eachDigit,digitLength));
+//            temp /= 10;
+//        }
+//        if(sum == num) {
+//            System.out.println(num + " is an armstrong number");
+//        }
+//    }
 
-    for(int i = 0; i < arr.length; i++){
 
-        int num = arr[i];
-        int temp = num;
-        int sum = 0;
-        int digitLength = String.valueOf(num).length();
+    int[] arr1 = {3,4,1,5,6,2};
 
-        while(temp>0){
-            int eachDigit = temp % 10 ;
-            sum += (int) (Math.pow(eachDigit,digitLength));
-            temp /= 10;
+    for(int i = 0; i < arr1.length - 1 ; i++){
+        for(int j = 0; j < arr1.length - 1 -i; j++){
+            if(arr1[j] > arr1[j+1]){
+                int temp = arr1[j];
+                arr1[j] = arr1[j+1];
+                arr1[j+1] = temp;
+            }
         }
-        if(sum == num) {
-            System.out.println(num + " is an armstrong number");
-        }
+    }
+
+    for(int num: arr1){
+        System.out.print(num + " ");
     }
 }
 
