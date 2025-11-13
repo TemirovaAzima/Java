@@ -756,45 +756,102 @@ void main() {
 
     // finding the longest consecutive length of a number
 
-    Scanner in = new Scanner(System.in);
+//    Scanner in = new Scanner(System.in);
+//
+//   int currentNumber ;
+//   int previousNumber;
+//   int currentCount = 1;
+//   int maxCount = 1;
+//   int numberWithMax =0 ;
+//
+//   previousNumber = in.nextInt();
+//
+//   if(previousNumber == 0){
+//       System.out.println("No numbers entered");
+//   }
+//
+//   while(true){
+//       currentNumber = in.nextInt();
+//       if(currentNumber ==0){
+//           break;
+//       }
+//
+//       if(currentNumber == previousNumber){
+//           currentCount++;
+//       }
+//       else{
+//           if(currentCount > maxCount ){
+//               maxCount = currentCount;
+//               numberWithMax = previousNumber;
+//           }
+//           currentCount = 1;
+//       }
+//       previousNumber = currentNumber;
+//   }
+//
+//   if (currentCount > maxCount){
+//       maxCount = currentCount;
+//       numberWithMax = previousNumber;
+//   }
 
-   int currentNumber ;
-   int previousNumber;
-   int currentCount = 1;
-   int maxCount = 1;
-   int numberWithMax =0 ;
+//    System.out.println("The length of the longest consecutive sequence is : " + maxCount + " times " + numberWithMax);
+//
+//    int[] arr = {153,333,370,515,407,80};
+//     int value =0 ;
+//    for(int i = 0; i < arr.length;i++){
+//        value += (int) Math.pow(arr[i],arr[i.length].);
+//    }
+//    int a = 356;
+//    System.out.println(a.length(););
 
-   previousNumber = in.nextInt();
+//    int[] arr = {153,333,370,515,407,80};
+//     int value =0 ;
+//
+//     for(int i = 0; i < arr.length; i++){
+//         for(int j = 0 ; j < arr.length ; j++){
+//             value += (int) (Math.pow(arr[i].chartAt(j),arr[i].length));
+//
+//             if(value == arr[i]){
+//                 System.out.println(value + "is armstrong");
+//             }
+//         }
+//     }
 
-   if(previousNumber == 0){
-       System.out.println("No numbers entered");
-   }
+//    int[] arr = {153,333,370,515,407,80};
+//
+//    for(int i = 0; i < arr.length; i++){
+//        int num = arr[i];
+//        int temp = num;
+//        int digits = String.valueOf(num).length();
+//        int sum = 0;
+//
+//        while(temp > 0){
+//            int digit = temp % 10;
+//            sum+= Math.pow(digit,digits);
+//            temp /=10;
+//        }
+//        if(sum == num){
+//            System.out.println(num + " is an Armstrong number");
+//        }
+//    }
 
-   while(true){
-       currentNumber = in.nextInt();
-       if(currentNumber ==0){
-           break;
-       }
+    int[] arr = {153,333,370,515,407,80};
 
-       if(currentNumber == previousNumber){
-           currentCount++;
-       }
-       else{
-           if(currentCount > maxCount ){
-               maxCount = currentCount;
-               numberWithMax = previousNumber;
-           }
-           currentCount = 1;
-       }
-       previousNumber = currentNumber;
-   }
+    for(int i = 0; i < arr.length; i++){
 
-   if (currentCount > maxCount){
-       maxCount = currentCount;
-       numberWithMax = previousNumber;
-   }
+        int num = arr[i];
+        int temp = num;
+        int sum = 0;
+        int digitLength = String.valueOf(num).length();
 
-    System.out.println("The length of the longest consecutive sequence is : " + maxCount + " times " + numberWithMax);
-
+        while(temp>0){
+            int eachDigit = temp % 10 ;
+            sum += (int) (Math.pow(eachDigit,digitLength));
+            temp /= 10;
+        }
+        if(sum == num) {
+            System.out.println(num + " is an armstrong number");
+        }
+    }
 }
 
