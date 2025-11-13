@@ -855,20 +855,85 @@ void main() {
 //    }
 
 
-    int[] arr1 = {3,4,1,5,6,2};
+//    int[] arr1 = {3,4,1,5,6,2};
+//
+//    for(int i = 0; i < arr1.length - 1 ; i++){
+//        for(int j = 0; j < arr1.length - 1 -i; j++){
+//            if(arr1[j] > arr1[j+1]){
+//                int temp = arr1[j];
+//                arr1[j] = arr1[j+1];
+//                arr1[j+1] = temp;
+//            }
+//        }
+//    }
+//
+//    for(int num: arr1){
+//        System.out.print(num + " ");
+//    }
 
-    for(int i = 0; i < arr1.length - 1 ; i++){
-        for(int j = 0; j < arr1.length - 1 -i; j++){
-            if(arr1[j] > arr1[j+1]){
-                int temp = arr1[j];
-                arr1[j] = arr1[j+1];
-                arr1[j+1] = temp;
+    int[] a = new int[(int) (Math.random() * 6 + 1)];
+    int[] b = new int[(int) (Math.random() * 6 + 1)];
+
+    for(int i = 0 ; i < a.length; i++){
+        a[i] = (int) (Math.random() * 6 + 1);
+    }
+
+    for(int i = 0; i< b.length;i++){
+        b[i] = (int) (Math.random() * 6 + 1);
+    }
+
+    for(int i = 0; i < a.length - 1; i++){
+        for(int j = 0; j < a.length - 1 -i ; j++){
+            if( a[j] > a[j+1] ){
+                int temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
             }
         }
     }
 
-    for(int num: arr1){
-        System.out.print(num + " ");
+    for(int i = 0; i < b.length - 1; i++){
+        for(int j = 0; j < b.length - 1 -i ; j++){
+            if( b[j] < b[j+1] ){
+                int temp = b[j];
+                b[j] = b[j+1];
+                b[j+1] = temp;
+            }
+        }
+    }
+
+    for(int num1: a){
+        System.out.print(num1 + " ");
+    }
+
+    System.out.println();
+    for(int num2: b){
+        System.out.print(num2 + " ");
+    }
+
+    int[] c = new int[a.length + b.length];
+
+    for(int i =0 ; i < a.length; i++){
+        c[i] = a[i];
+    }
+
+    for(int i = 0 ; i < b.length; i++){
+        c[a.length + i] = b[i] ;
+    }
+
+    for(int i = 0 ; i < c.length- 1 ; i++){
+        for(int j = 0; j < c.length - 1 - i; j++){
+            if(c[j] > c[j+1]){
+                int temp = c[j];
+                c[j] = c[j+1];
+                c[j+1] = temp;
+            }
+        }
+    }
+    System.out.println();
+
+    for(int mergedArr : c){
+        System.out.print(mergedArr + " ");
     }
 }
 
