@@ -964,31 +964,91 @@ void main() {
 //    System.out.println(n1o);
 //    System.out.println(n1x);
 
-    int k = 3;
-    int x ;
-    x = 1 << k;
-    System.out.println(x);
+//    int k = 3;
+//    int x ;
+//    x = 1 << k;
+//    System.out.println(x);
     // exercise 4
-    int n = -128;
-    int k1 = n & 0xFF;
-    System.out.println(k1);
+//    int n = -128;
+//    int k1 = n & 0xFF;
+//    System.out.println(k1);
     // exercise 3
-    int k3 = 2;
-    int x1 = 0b110100;
-    x1 = x1 >> k3 & 1;
-    System.out.println(x1);
+//    int k3 = 2;
+//    int x1 = 0b110100;
+//    x1 = x1 >> k3 & 1;
+//    System.out.println(x1);
     // exercise 5
 
-    int value = 1793;
-//    int k4 = value & (2 *0xFF + 0xFF ) ; incorrect
-    int k4 = (value >> 8) & 0xFF;
-    System.out.println(k4);
+//    int value = 1793;
+////    int k4 = value & (2 *0xFF + 0xFF ) ; incorrect
+//    int k4 = (value >> 8) & 0xFF;
+//    System.out.println(k4);
+//
+//    int n2 = 123456;
+//    int m = ((n2 >>16) & 0xFF) << 16;
+//    System.out.println(m);
 
-    int n2 = 123456;
-    int m = ((n2 >>16) & 0xFF) << 16;
-    System.out.println(m);
+//    int[] arr = {2,4,5,67,89,11,1,23,12,10,16};
+//
+//    for(int i = arr.length - 1; i >= 0; i--){
+//        if( arr[i] % 2 == 0 && arr[i] > 10){
+//            System.out.print(arr[i] + " ");
+//        }
+//    }
 
+//    int[] arr = new int[20];
+
+//    for(int num : arr){
+//        num = (int) (Math.random() * 50 + 1);
+//        System.out.print(num+ " ");
+//    }
+//    System.out.println(); // u cant use loop
+//    for(int i = 0; i < arr.length;i++){
+//        arr[i] = (int) (Math.random() *50 + 1);
+//        System.out.print(arr[i] + " ");
+//    }
+//    System.out.println();
+//    for(int i = arr.length-1; i >=0; i--){
+//        if(arr[i] % 2 ==0 && arr[i] > 10){
+//            System.out.print(arr[i] + " ");
+//        }
+//    }
+
+//    String inHex = "2FA3";
+//    int value =0 ;
+//    int h = 0;
+//
+//    System.out.println(inHex.length());
+//    for(int i = 0; i < inHex.length(); i++){
+//        switch (inHex.charAt(i)){
+//            case '0','1','2','3','4','5','6','7','8','9' -> h = inHex.charAt(i) - '0';
+//            case 'A','B','C','D','E','F' -> h = inHex.charAt(i) - 'A' + 10;
+//        }
+//        value += (int) (h * (Math.pow(16,inHex.length()-1- i )));
+//    }
+//    System.out.println(value);
+//    System.out.println(0x2FA3);
+//    char stop = 'a' + 10;
+//    String text = "";
+//    for (char c = 'a'; c < stop; c += 2) {
+//        System.out.print(c - 'a');
+//        System.out.print(' ');
+//        text += c;
+//    }
+//    System.out.println();
+//    for (int i = text.length() - 1; i >= 0; i -= 1) {
+//        System.out.print(text.charAt(i));
+//    }
+
+    int[][] arr = {{1,2,3,4,5},
+                  {5,4,3,2,1}};
+    int sum = 0;
+    int sum2 = 0;
+
+    sum = arr[0][arr[0].length -1] + arr[arr.length-1][0];
+    sum2 = arr[arr.length-1][0];
+    System.out.println(sum);
+    System.out.println(sum2);
 
 
 }
-
