@@ -1081,15 +1081,36 @@ void main() {
 //        System.out.print(number);
 //    }
 
-    byte num = 13;
-    char c ;
-    if(num<10){
-        c = (char) ('0' + num);
-    }
-    else{
-        c = (char) ('A' + (num -10));
-    }
-    System.out.print("Hex: " + c);
+//    byte num = 13;
+//    char c ;
+//    if(num<10){
+//        c = (char) ('0' + num);
+//    }
+//    else{
+//        c = (char) ('A' + (num -10));
+//    }
+//    System.out.print("Hex: " + c);
+   Scanner in = new Scanner(System.in);
+   double points ;
+   double maxPoints;
+    System.out.print("Enter the number of points: ");
+    points = in.nextDouble();
+    System.out.print("Enter the maximum number of achievable points: ");
+    maxPoints = in.nextDouble();
 
-
+    double proportion = points/maxPoints;
+    if(proportion >= 0.875){
+        System.out.println("Grade 5");
+    }
+    else if (proportion >=0.812){
+        System.out.println("Grade 4.5");
+    }else if (proportion >=0.75){
+        System.out.println("Grade 4");
+    }else if (proportion >=0.625){
+        System.out.println("Grade 3.5");
+    }else if (proportion >=0.5){
+        System.out.println("Grade 3");
+    }else{
+        System.out.println("Grade 2");
+    }
 }
