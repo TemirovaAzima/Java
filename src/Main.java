@@ -5,21 +5,35 @@ void main() {
 //                           " is " + RecFun.fact(num));
 //    }
     int num = 4;
-    int result = countUp(num);
+    int result = countDown(num);
 //    System.out.println(result);
 
 
 }
 
-static int countUp(int n ){
+static int countDown(int n ){
     if(n == 0){
         return 0;
     };
-     int result =  countUp(n-1) + 1;
-    System.out.println(result);
-     return result ;
+    System.out.println(n);
+     return countDown(n-1);
+//     int res =  countDown(n-1);
+//    System.out.println(res);
+//     return res;
+//    System.out.println(result);
+//    return result ;
 
 }
+
+//static int countUp(int n ){
+//    if(n == 0){
+//        return 0;
+//    };
+//     int result =  countUp(n-1) + 1;
+//    System.out.println(result);
+//     return result ;
+//
+//}
 //public class RecFun{
 //    static int fact(int n){
 //        if(n < 0) throw new IllegalArgumentException();
