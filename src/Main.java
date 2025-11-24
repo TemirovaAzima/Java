@@ -17,15 +17,17 @@ void main() {
 //    System.out.println(result);
     String word = "coat";
     String reversed = "";
-    char c ;
+//    char c ;
     for(int j = word.length() - 1 ; j>=0; j--){
-       c = word.charAt(j);
-       // reversed = c wont work cause java cant automatically convert char to string
-       reversed += c ; // here reversed = reversed + c ; it can u adding string to char it is okay
+//       c = word.charAt(j); // also you cant change the value of word cause there are immutable
+        // that's why we created the var and c
+       // reversed = c won't work cause java cant automatically convert char to string
+//       reversed += c ; // here reversed = reversed + c ; it can u adding string to char it is okay
         // String concatenation
+        reversed += word.charAt(j); // U COULD DO LIKE THIS TOO
     }
     System.out.println(reversed);
-    System.out.println("b" + 'b'); // look this is the prove (❁´◡`❁) 😎
+    System.out.println("b" + 'b'); // look this is the proof (❁´◡`❁) 😎
 }
 
 //static int stringLength(String text,int i){
