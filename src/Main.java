@@ -7,17 +7,28 @@ void main() {
 //    int num = 4;
 //    int result = countDown(num);
 //    System.out.println(result);
-     int result =  sumOfDigits(1234);
+//     int result =  sumOfDigits(1234);
+//    System.out.println(result);
+    int num = 2;
+    int power = 5;
+    int result = power(num,power);
     System.out.println(result);
 }
 
-static int sumOfDigits(int n){
-    if(n == 0){
-        return 0;
+static int power(int n, int p){
+    if(p ==0){
+        return 1;  // Base case: anything^0= 1
     }
-
-    return sumOfDigits(n/10) + n%10;
+    return power(n,p-1)  * n;
 }
+
+//static int sumOfDigits(int n){
+//    if(n == 0){
+//        return 0;
+//    }
+//
+//    return sumOfDigits(n/10) + n%10;
+//}
 
 //static int countDown(int n ){
 //    if(n == 0){
