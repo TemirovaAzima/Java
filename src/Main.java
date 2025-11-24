@@ -15,20 +15,51 @@ void main() {
 //    System.out.println(result);
 //    int result = stringLength("cat",0);
 //    System.out.println(result);
-    String word = "coat";
-    String reversed = "";
+//    String word = "coat";
+//    String reversed = "";
 //    char c ;
-    for(int j = word.length() - 1 ; j>=0; j--){
+//    for(int j = word.length() - 1 ; j>=0; j--){
 //       c = word.charAt(j); // also you cant change the value of word cause there are immutable
         // that's why we created the var and c
        // reversed = c won't work cause java cant automatically convert char to string
 //       reversed += c ; // here reversed = reversed + c ; it can u adding string to char it is okay
         // String concatenation
-        reversed += word.charAt(j); // U COULD DO LIKE THIS TOO
-    }
-    System.out.println(reversed);
-    System.out.println("b" + 'b'); // look this is the proof (❁´◡`❁) 😎
+//        reversed += word.charAt(j); // U COULD DO LIKE THIS TOO
+//    }
+
+
+//    System.out.println(reversed);
+//    System.out.println("b" + 'b'); // look this is the proof (❁´◡`❁) 😎
+    String word = "coat";
+    String result = reversedString(word,0);
+    System.out.println(result);
 }
+static String reversedString(String word , int i ){
+    if(i == word.length() - 1){
+        return  word.charAt(i) + "";
+    }
+    return   reversedString(word,i+1) + word.charAt(i) ;
+}
+//static String reversedString(String word , int i ){
+//    if(i == 0){
+//        return "" + word.charAt(0);
+//    }
+//    return  word.charAt(i) + reversedString(word,i-1) ;
+//}
+//static String reversedString(String word, int i){
+////      int copy = word.length() -1;
+//      String reversed ="";
+////       i = copy -i ;
+//      if (i == word.length() -1 ){
+//         return reversed += word.charAt(i);
+//      }
+//
+////      reversed = reversed + word.charAt(i);
+//      char c =  reversedString(word,i+1 );
+//      return reversed;
+//
+//
+//}
 
 //static int stringLength(String text,int i){
 //    try {
