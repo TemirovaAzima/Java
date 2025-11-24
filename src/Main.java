@@ -13,20 +13,31 @@ void main() {
 //    int power = 5;
 //    int result = power(num,power);
 //    System.out.println(result);
-    int result = stringLength("cat",0);
-    System.out.println(result);
+//    int result = stringLength("cat",0);
+//    System.out.println(result);
+    String word = "coat";
+    String reversed = "";
+    char c ;
+    for(int j = word.length() - 1 ; j>=0; j--){
+       c = word.charAt(j);
+       // reversed = c wont work cause java cant automatically convert char to string
+       reversed += c ; // here reversed = reversed + c ; it can u adding string to char it is okay
+        // String concatenation
+    }
+    System.out.println(reversed);
+    System.out.println("b" + 'b'); // look this is the prove (❁´◡`❁) 😎
 }
 
-static int stringLength(String text,int i){
-    try {
-        text.charAt(i); // this is slow and bad practice
-    }
-    catch (StringIndexOutOfBoundsException e){
-        return i;
-    }
-
-    return stringLength(text,i+1);
-}
+//static int stringLength(String text,int i){
+//    try {
+//        text.charAt(i); // this is slow and bad practice
+//    }
+//    catch (StringIndexOutOfBoundsException e){
+//        return i;
+//    }
+//
+//    return stringLength(text,i+1);
+//}
 
 //static int stringLength(String word, int i){
 //    if(i == word.length()){
