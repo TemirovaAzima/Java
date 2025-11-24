@@ -17,12 +17,24 @@ void main() {
     System.out.println(result);
 }
 
-static int stringLength(String word, int i){
-    if(i == word.length()){
+static int stringLength(String text,int i){
+    try {
+        text.charAt(i); // this is slow and bad practice
+    }
+    catch (StringIndexOutOfBoundsException e){
         return i;
     }
-    return stringLength(word,i+1);
+
+    return stringLength(text,i+1);
 }
+
+//static int stringLength(String word, int i){
+//    if(i == word.length()){
+//        return i;
+//    }
+//    return stringLength(word,i+1);
+//}
+
 //static int power(int n, int p){
 //    if(p ==0){
 //        return 1;  // Base case: anything^0= 1
