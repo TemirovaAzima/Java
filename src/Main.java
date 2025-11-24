@@ -31,21 +31,21 @@ void main() {
 //    System.out.println(reversed);
 //    System.out.println("b" + 'b'); // look this is the proof (❁´◡`❁) 😎
     String word = "coat";
-    String result = reversedString(word,0);
+    String result = reversedString(word,word.length() -1);
     System.out.println(result);
 }
-static String reversedString(String word , int i ){
-    if(i == word.length() - 1){
-        return  word.charAt(i) + "";
-    }
-    return   reversedString(word,i+1) + word.charAt(i) ;
-}
 //static String reversedString(String word , int i ){
-//    if(i == 0){
-//        return "" + word.charAt(0);
+//    if(i == word.length() - 1){
+//        return  word.charAt(i) + "";
 //    }
-//    return  word.charAt(i) + reversedString(word,i-1) ;
+//    return   reversedString(word,i+1) + word.charAt(i) ;
 //}
+static String reversedString(String word , int i ){
+    if(i == 0){
+        return "" + word.charAt(0);
+    }
+    return  word.charAt(i) + reversedString(word,i-1) ;
+}
 //static String reversedString(String word, int i){
 ////      int copy = word.length() -1;
 //      String reversed ="";
