@@ -9,18 +9,26 @@ void main() {
 //    System.out.println(result);
 //     int result =  sumOfDigits(1234);
 //    System.out.println(result);
-    int num = 2;
-    int power = 5;
-    int result = power(num,power);
+//    int num = 2;
+//    int power = 5;
+//    int result = power(num,power);
+//    System.out.println(result);
+    int result = stringLength("cat",0);
     System.out.println(result);
 }
 
-static int power(int n, int p){
-    if(p ==0){
-        return 1;  // Base case: anything^0= 1
+static int stringLength(String word, int i){
+    if(i == word.length()){
+        return i;
     }
-    return power(n,p-1)  * n;
+    return stringLength(word,i+1);
 }
+//static int power(int n, int p){
+//    if(p ==0){
+//        return 1;  // Base case: anything^0= 1
+//    }
+//    return power(n,p-1)  * n;
+//}
 
 //static int sumOfDigits(int n){
 //    if(n == 0){
