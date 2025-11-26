@@ -1,29 +1,12 @@
-void main() {
-    String pal = "ABCDDCB";
-    System.out.println(isPalindrome(pal,0,pal.length()-1));
-}
-// chatgpt version
-static boolean isPalindrome(String word,int i,int j){
-    if(i>=j){
-        return true;
-    }
-    if(word.charAt(i) != word.charAt(j)){
-        return false;
-    }
-    return isPalindrome(word,i+1,j-1);
-}
+void main(String[] args) {
 
-
-//static boolean isPalindrome(String word,int i,int j){
-//    if(i>=j){
-//        return word.charAt(i) == word.charAt(j);
-//    }
-//    return word.charAt(i) == word.charAt(j) ? isPalindrome(word,i+1,j-1): false;
-//}
-//static boolean palindrome(String word,int i,int j){
-//    if((word.length()-1) / 2== i){
-//        return word.charAt(i) == word.charAt(j);
-//    };
-//    return word.charAt(i) == word.charAt(j) ? palindrome(word,i+1,j-1): false;
-//}
+    int[] arr = {5,1,8,2,203,88,899,3};
+    System.out.println(findMax(arr,0));
+}
+static int findMax(int[] arr,int i){
+    if(arr.length-1 == i){
+        return arr[i];
+    }
+    return arr[i] > findMax(arr,i+1) ? arr[i] : findMax(arr, i+1);
+}
 
