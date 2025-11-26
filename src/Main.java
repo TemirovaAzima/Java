@@ -7,6 +7,13 @@ static int findMax(int[] arr,int i){
     if(arr.length-1 == i){
         return arr[i];
     }
-    return arr[i] > findMax(arr,i+1) ? arr[i] : findMax(arr, i+1);
+    int nextMax = findMax(arr,i+1); // we dont repeat here the findMax twice
+    return arr[i] > nextMax ? arr[i] : nextMax;
 }
+//static int findMax(int[] arr,int i){
+//    if(arr.length-1 == i){
+//        return arr[i];
+//    }
+//    return arr[i] > findMax(arr,i+1) ? arr[i] : findMax(arr, i+1);
+//}
 
